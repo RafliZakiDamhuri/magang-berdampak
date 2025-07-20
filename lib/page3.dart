@@ -4,9 +4,22 @@ import 'package:magang_3/Providers/page3_provider.dart';
 import 'package:magang_3/page2.dart';
 import 'package:provider/provider.dart';
 
-class Page3 extends StatelessWidget {
-  String? name = '';
+class Page3 extends StatefulWidget {
   Page3({super.key});
+
+  @override
+  State<Page3> createState() => _Page3State();
+}
+
+class _Page3State extends State<Page3> {
+  String? name = '';
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Provider.of<Page3Provider>(context, listen: false).getUsers();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -59,9 +72,7 @@ class Page3 extends StatelessWidget {
                           Consumer<Page3Provider>(
                             builder: (context, page3Provider, child) {
                               return GestureDetector(
-                                onTap: () {
-                                  page3Provider.getUsers();
-                                },
+                                onTap: () {},
                                 child: Text(username ?? ''),
                               );
                             },

@@ -14,10 +14,6 @@ class Page2 extends StatelessWidget {
         title: Stack(
           alignment: Alignment.center,
           children: [
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Icon(Icons.arrow_back, color: Colors.black),
-            ),
             Center(
               child: Text(
                 'Second Screen',
@@ -44,11 +40,15 @@ class Page2 extends StatelessWidget {
 
           Expanded(
             child: Center(
-              child: Text(username ?? '', style: TextStyle(fontSize: 20)),
+              child: Text(
+                username ?? 'Selected User Name',
+                style: TextStyle(fontSize: 20),
+              ),
             ),
           ),
           Center(
             child: Container(
+              margin: EdgeInsets.only(bottom: 30),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(16)),
                 color: Color(0xFF2B637B),
